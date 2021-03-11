@@ -1,4 +1,4 @@
-# leiteseguro-front
+# leite-seguro-front
 
 ## Instalação do Vue
 ```
