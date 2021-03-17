@@ -13,6 +13,5 @@ export default {
 <style lang="scss">
 .wrapper {
   min-height: 100%;
-  padding-bottom: 50px;
 }
 </style>

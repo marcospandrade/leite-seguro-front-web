@@ -11,7 +11,7 @@ export default [
     },
     {
         name: 'RecoverPassword',
-        path: 'recoverpassword',
+        path: '/recover-password',
         component: () => import(/* webpackChunkName: "recover-password" */ './pages/RecoverPassword')
     }
 ]

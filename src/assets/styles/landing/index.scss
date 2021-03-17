@@ -1,5 +1,8 @@
-@import './landing.scss';
-@import './settings.scss';
-@import './custom.scss';
-// @import '@/plugins/aos-animation/aos.css';
-// @import '@/plugins/fancybox-master/jquery.fancybox.min.css';
+@import 'helpers/variables';
+@import 'helpers/mixins';
+@import 'helpers/spacings';
+@import 'components/buttons';
+@import 'components/_typography';
+@import 'sections';
+@import 'style.scss';
+@import 'settings.scss';

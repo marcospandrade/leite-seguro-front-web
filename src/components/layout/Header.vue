@@ -5,14 +5,11 @@
       <div
         class="row justify-content-between align-items-center position-relative"
       >
-        <div class="col">
-          <!-- Brand Logo -->
-          <div class="brand-logo">
-            <a href=""><img src="@/assets/images/main-logo.png" alt="" /></a>
-          </div>
+        <div class="col-4 col-md-4 logo-safemilk">
+          <a href="#">Leite Seguro</a>
         </div>
         <!-- Menu Block -->
-        <div class="col">
+        <div class="col-4 col-md-4">
           <div class="main-navigation">
             <ul class="main-menu">
               <li class="menu-item has-dropdown">
@@ -71,7 +68,7 @@
         </div>
 
         <!-- Button Block -->
-        <div class="col">
+        <div class="col-4 col-md-4">
           <div class="header-btns">
             <a href="#" class="btn btn--transparent">Sign in</a>
             <a href="#" class="btn btn--primary hvr-shine">Start free trial</a>

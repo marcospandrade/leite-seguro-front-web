@@ -64,7 +64,7 @@
     <!--Off Canvas Navigation End-->
 
     <!-- Banner Section -->
-    <section class="hero-area" style="background: url('./images/hero-bg.jpg') no-repeat top center;">
+    <section class="hero-area" style="background-image: url('./images/hero-bg.jpg')">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-xl-7 col-lg-8 col-md-10">
@@ -579,7 +579,7 @@
       </div>
     </div>
 
-    <Footer/>
+    <Footer />
   </div>
 </template>
 
