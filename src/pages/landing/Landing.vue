@@ -64,21 +64,23 @@
     <!--Off Canvas Navigation End-->
 
     <!-- Banner Section -->
-    <section class="hero-area" style="background-image: url('./images/hero-bg.jpg')">
+    <section
+      class="hero-area"
+    >
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-xl-7 col-lg-8 col-md-10">
             <div class="hero-content">
-              <h1 class="title h2">Manage your team, faster!</h1>
+              <h1 class="title h2">
+                Tenha todas as informações de maneira organizada com o Leite
+                Seguro
+              </h1>
               <p>
-                Create custom landing pages with Berlin that convert more
-                visitors than any website.
+                Tome as melhores decisões para o seu rebanho leiteiro com o
+                Leite Seguro
               </p>
               <div class="hero-btn">
-                <a href="#" class="btn btn--primary hvr-shine"
-                  >Start free 14 days trial</a
-                >
-                <span class="text--info">No credit card required</span>
+                <a href="#" class="btn">Entrar</a>
               </div>
             </div>
           </div>
@@ -114,10 +116,10 @@
                 <span class="outer-circle circle-bg-1"></span>
               </div>
               <div class="widget__body divider--right">
-                <h3 class="widget__heading h6">Single Platform</h3>
+                <h3 class="widget__heading h6">Plataforma única</h3>
                 <p>
-                  Create custom landing pages with Berlin that convert more
-                  visitors than any website.
+                  Através de um único sistema, você poderá entender melhor sobre
+                  a sua produção leiteira.
                 </p>
               </div>
             </div>
@@ -135,10 +137,10 @@
                 <span class="outer-circle circle-bg-2"></span>
               </div>
               <div class="widget__body divider--right">
-                <h3 class="widget__heading h6">Faster Communication</h3>
+                <h3 class="widget__heading h6">Comunicação Ágil</h3>
                 <p>
-                  Create custom landing pages with Berlin that convert more
-                  visitors than any website.
+                  No Leite Seguro, você tem todas as informações através do site
+                  e do nosso aplicativo na palma da sua mão, e em tempo real.
                 </p>
               </div>
             </div>
@@ -156,10 +158,11 @@
                 <span class="outer-circle circle-bg-3"></span>
               </div>
               <div class="widget__body">
-                <h3 class="widget__heading h6">Everything in One Place</h3>
+                <h3 class="widget__heading h6">Decisões Assertivas</h3>
                 <p>
-                  Create custom landing pages with Berlin that convert more
-                  visitors than any website.
+                  Com toda a nossa análise das informações registradas, você tem
+                  tudo o que precisa para tomar as melhores decisões para o seu
+                  rebanho.
                 </p>
               </div>
             </div>
@@ -198,24 +201,29 @@
           <div class="col-xl-5 offset-xl-1 col-lg-6 col-md-6">
             <div class="content-section-text">
               <h2 class="title">
-                Explore the things <br class="d-none d-xs-block" />
-                you never saw.
+                Atualize-se com a tecnologia Leite Seguro<br
+                  class="d-none d-xs-block"
+                />
               </h2>
               <p>
-                Create custom landing pages with Berlin that convert more
-                visitors than any website. With lots of unique blocks, you can
-                easily build a page without coding.
+                Tome suas decisões com o máximo de informações possível
+                utilizando a plataforma Leite Seguro,
               </p>
-              <a href="#" class="btn btn-primary--opacity hvr-bounce-to-right"
-                >Start free 14 days trial</a
+              <div
+                class="button"
+                data-aos="fade-left"
+                data-aos-duration="1500"
+                data-aos-once="true"
               >
+                <a href="#" class="btn btn-cta-inverse mt--20">Crie sua conta</a>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
     <!-- Content Section 2 -->
-    <div class="content-section section-padding">
+    <div class="content-section section-padding section-2">
       <div class="container">
         <div class="row align-items-center">
           <div class="col-xl-7 col-lg-6 col-md-6 order-md-2">
@@ -244,16 +252,15 @@
           <div class="col-xl-5 col-lg-6 col-md-6 order-md-1">
             <div class="content-section-text">
               <h2 class="title">
-                Build better team work <br class="d-none d-xs-block" />faster
-                and better!
+                Centralize informações e<br class="d-none d-xs-block" />
+                economize tempo!
               </h2>
               <p>
-                Create custom landing pages with Berlin that convert more
-                visitors than any website. With lots of unique blocks, you can
-                easily build a page without coding.
+                Com o Leite Seguro, você tem mais informações para tomar suas decisões e economiza tempo
+                através da nossa plataforma web e mobile que é totalmente interligada.
               </p>
-              <a href="#" class="btn btn-primary--opacity hvr-bounce-to-right"
-                >Start free 14 days trial</a
+              <a href="#" class="btn btn-cta"
+                >Faça Login</a
               >
             </div>
           </div>
@@ -261,7 +268,10 @@
       </div>
     </div>
     <!-- Video Section -->
-    <div class="section-padding video-bg" style="background-image: url('images/cta-bg.png')">
+    <div
+      class="section-padding video-bg"
+      style="background-image: url('images/cta-bg.png')"
+    >
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-xl-8 col-lg-10">
@@ -275,11 +285,9 @@
                 data-aos-once="true"
                 ><i class="icon icon-triangle-right-17-2"></i
               ></a>
-              <h2 class="title">We help you to be successful</h2>
+              <h2 class="title">Nós queremos resolver problemas</h2>
               <p>
-                Wireframes are generally created by business analysts, user
-                experience designers, developers, visual designers, and by those
-                with expertise
+                Através de uma plataforma intuitiva, você terá muito mais controle sobre a sua produção.
               </p>
             </div>
           </div>
@@ -315,11 +323,9 @@
         <div class="row justify-content-center">
           <div class="col-lg-9 col-xl-8 mb--35">
             <div class="section-title">
-              <h2 class="title h3">Choose a plan to start</h2>
+              <h2 class="title h3">Escolha um plano</h2>
               <p>
-                Wireframes are generally created by business analysts, user
-                experience designers, developers, visual designers, and by those
-                with expertise
+                Atendemos nossos clientes através de planos de assinatura.
               </p>
             </div>
           </div>
@@ -328,8 +334,8 @@
               <label class="switch">
                 <input type="checkbox" />
                 <span class="slider round"></span>
-                <p>Monthly</p>
-                <p>Yearly</p>
+                <p>Mensal</p>
+                <p>Anual</p>
               </label>
             </div>
           </div>
@@ -338,28 +344,27 @@
               <div class="row mb-d-30 justify-content-center">
                 <div class="col-xl-4 col-lg-5 col-md-6">
                   <div
-                    class="card card-p01"
+                    class="card card-p01 card-active"
                     data-aos="fade-up"
                     data-aos-duration="1500"
                     data-aos-once="true"
                     data-aos-delay="300"
                   >
                     <div class="card-head">
-                      <h6>Basic</h6>
+                      <h6>Básico</h6>
                       <h2>
-                        <span class="small-title">$</span>
-                        <span class="big-txt price-default">19</span>
+                        <span class="small-title">R$</span>
+                        <span class="big-txt price-default">100,00</span>
                         <span
                           class="big-txt price-dynamic"
-                          data-monthly="19"
-                          data-yearly="17"
+                          data-monthly="100"
+                          data-yearly="170"
                         ></span>
                         <span class="devider">/</span>
-                        <span class="month">month</span>
+                        <span class="month">mês</span>
                       </h2>
                       <p>
-                        Good for small business launching their products less
-                        then once a year
+                        Bom para testar nossos benefícios e validar se resolve o teu problema. Descubra o poder da inovação tecnológica.
                       </p>
                     </div>
 
@@ -367,27 +372,25 @@
                       <ul class="pricing-list">
                         <li>
                           <span><i class="icon icon-check-2"></i></span
-                          >Unlimited Blocks
+                          >Benefício 1
                         </li>
                         <li>
-                          <span><i class="icon icon-check-2"></i></span>5GB
-                          Clould Storages
+                          <span><i class="icon icon-check-2"></i></span>
+                          Benefício 2
                         </li>
                         <li class="disable-opt">
-                          <span><i class="icon icon-check-2"></i></span>Custom
-                          Domain Names
+                          <span><i class="icon icon-check-2"></i></span>Benefício 3
                         </li>
                         <li class="disable-opt">
                           <span><i class="icon icon-check-2"></i></span
-                          >Unlimited Emails
+                          >Benefício 4
                         </li>
                       </ul>
-                      <div class="card-btn">
-                        <a href="" class="btn btn--primary hvr-shine"
-                          >Start free 14 days trial</a
+                      <div class="card-btn text-center">
+                        <a href="#" class="btn btn-cta"
+                          >Crie sua conta</a
                         >
                       </div>
-                      <p>No credit card required</p>
                     </div>
                   </div>
                 </div>
@@ -402,19 +405,18 @@
                     <div class="card-head">
                       <h6>Pro</h6>
                       <h2>
-                        <span class="small-title">$</span>
-                        <span class="big-txt price-default">29</span>
+                        <span class="small-title">R$</span>
+                        <span class="big-txt price-default">250,00</span>
                         <span
                           class="big-txt price-dynamic"
-                          data-monthly="25"
-                          data-yearly="22"
+                          data-monthly="250"
+                          data-yearly="300"
                         ></span>
                         <span class="devider">/</span>
-                        <span class="month">month</span>
+                        <span class="month">mês</span>
                       </h2>
                       <p>
-                        Good for small business launching their products less
-                        then once a year
+                        Ideal para quem já conhece o Leite Seguro e está disposto a desfrutar dos benefícios premium da plataforma. Escala garantida.
                       </p>
                     </div>
 
@@ -422,27 +424,26 @@
                       <ul class="pricing-list">
                         <li>
                           <span><i class="icon icon-check-2"></i></span
-                          >Unlimited Blocks
+                          >Benefício 1
                         </li>
                         <li>
-                          <span><i class="icon icon-check-2"></i></span>5GB
-                          Clould Storages
+                          <span><i class="icon icon-check-2"></i></span>
+                          Benefício 2
                         </li>
                         <li>
-                          <span><i class="icon icon-check-2"></i></span>Custom
-                          Domain Names
+                          <span><i class="icon icon-check-2"></i></span>
+                          Benefício 3
                         </li>
                         <li>
                           <span><i class="icon icon-check-2"></i></span
-                          >Unlimited Emails
+                          >Benefício 4
                         </li>
                       </ul>
-                      <div class="card-btn">
-                        <a href="" class="btn btn--primary hvr-shine"
-                          >Start free 14 days trial</a
+                      <div class="card-btn text-center">
+                        <a href="#" class="btn btn-cta"
+                          >Sou PRO</a
                         >
                       </div>
-                      <p>No credit card required</p>
                     </div>
                   </div>
                 </div>
@@ -453,48 +454,28 @@
       </div>
     </div>
 
-    <!-- Brand Section -->
-    <div class="brand-section pb--60 pb-md--100">
-      <div class="container">
-        <div class="brand-top-text">
-          <P>We are proud to have some big brands as our customer</P>
-        </div>
+    <!-- Testimonial Section -->
+    <div class="pb--60 pb-md--70 bg-light-white">
+      <div class="container mt--50">
         <div class="row justify-content-center">
-          <div class="col-xl-10">
-            <div class="brand-wrapper">
-              <div class="single-brand">
-                <img src="@/assets/images/client-1.png" alt="" />
-              </div>
-              <div class="single-brand">
-                <img src="@/assets/images/client-2.png" alt="" />
-              </div>
-              <div class="single-brand">
-                <img src="@/assets/images/client-3.png" alt="" />
-              </div>
-              <div class="single-brand">
-                <img src="@/assets/images/client-4.png" alt="" />
-              </div>
+          <div class="col-lg-9 col-xl-8 mb--35 mt--35">
+            <div class="section-title">
+              <h2 class="title h3">Feedbacks</h2>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-
-    <!-- Testimonial Section -->
-    <div class="pb--60 pb-md--70">
-      <div class="container">
         <div class="card-group berlin-card-group">
           <div class="card testimonial-card-1">
             <div class="card-body">
               <span class="quote-icon">”</span>
-              <p class="card-text">
+              <p class="card-text mb--10">
                 “You made it so simple. My new site is so much faster and easier
                 to work with than my old site. I just choose the page, make the
                 change and click save.”
               </p>
             </div>
             <div class="card-footer">
-              <div class="client-card">
+              <div class="client-card pb--10">
                 <div class="image">
                   <img src="@/assets/images/testimonial1.png" alt="" />
                 </div>
@@ -508,13 +489,13 @@
           <div class="card testimonial-card-1">
             <div class="card-body">
               <span class="quote-icon">”</span>
-              <p class="card-text">
+              <p class="card-text mb--10">
                 “Simply the best. Better than all the rest. I’d recommend this
                 product to beginners and advanced users.”
               </p>
             </div>
             <div class="card-footer">
-              <div class="client-card">
+              <div class="client-card pb--10">
                 <div class="image">
                   <img src="@/assets/images/testimonial2.png" alt="" />
                 </div>
@@ -528,13 +509,13 @@
           <div class="card testimonial-card-1">
             <div class="card-body">
               <span class="quote-icon">”</span>
-              <p class="card-text">
+              <p class="card-text mb--10">
                 “This is a top quality product. No need to think twice before
                 purchasing, you simply could not go wrong”
               </p>
             </div>
             <div class="card-footer">
-              <div class="client-card">
+              <div class="client-card pb--10">
                 <div class="image">
                   <img src="@/assets/images/testimonial3.png" alt="" />
                 </div>
@@ -550,18 +531,18 @@
     </div>
 
     <!-- CTA Section -->
-    <div class="pb--60 pb-md--165">
+    <div class="pb--60 pb-md--100">
       <div class="container">
         <div class="row justify-content-center">
-          <div class="col-xl-8 col-lg-10 col-md-12">
+          <div class="col-xl-12 col-lg-12 col-md-12">
             <div class="cta-wrapper">
               <h3
-                class="title mt--20"
+                class="title h3 mt--20"
                 data-aos="fade-right"
                 data-aos-duration="1500"
                 data-aos-once="true"
               >
-                Manage your team in one place
+                Inove no gerenciamento do seu rebanho com o Leite Seguro
               </h3>
               <div
                 class="button"
@@ -569,9 +550,7 @@
                 data-aos-duration="1500"
                 data-aos-once="true"
               >
-                <a href="" class="btn btn--primary mt--20 hvr-shine"
-                  >Start free 14 days trial</a
-                >
+                <a href="#" class="btn btn-cta mt--20">Crie sua conta</a>
               </div>
             </div>
           </div>
@@ -584,17 +563,21 @@
 </template>
 
 <script>
-import Header from '@/components/layout/Header';
-import Footer from '@/components/layout/Footer';
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
+import imgLanding from "@/assets/images/hero-bg.png";
 
 export default {
   name: "LandingPage",
   components: {
     Header,
-    Footer
-  }
+    Footer,
+  },
 };
 </script>
 
-<style>
+<style lang="scss">
+.hero-area {
+  background-image: imgLanding;
+}
 </style>

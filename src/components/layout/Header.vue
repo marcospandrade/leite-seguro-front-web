@@ -13,55 +13,11 @@
           <div class="main-navigation">
             <ul class="main-menu">
               <li class="menu-item has-dropdown">
-                <a href="#features">Demos</a>
-                <ul class="menu-dropdown">
-                  <li class="single-item">
-                    <a href="#">
-                      <h3>Mobile Application</h3>
-                      <p>Best for Mobile App Presentation</p>
-                    </a>
-                  </li>
-                  <li class="single-item">
-                    <a href="#">
-                      <h3>Web Application</h3>
-                      <p>Best for Web Application</p>
-                    </a>
-                  </li>
-                  <li class="single-item">
-                    <a href="#">
-                      <h3>SaaS Application</h3>
-                      <p>Best for SaaS Application</p>
-                    </a>
-                  </li>
-                  <li class="single-item">
-                    <a href="#">
-                      <h3>SaaS Subscription</h3>
-                      <p>Best for SaaS Subscription</p>
-                    </a>
-                  </li>
-                  <li class="single-item">
-                    <a href="#">
-                      <h3>Digital Service</h3>
-                      <p>Best for Digital Services</p>
-                    </a>
-                  </li>
-                  <li class="single-item">
-                    <a href="#">
-                      <h3>Online Course</h3>
-                      <p>Best for Online Course</p>
-                    </a>
-                  </li>
-                  <li class="single-item">
-                    <a href="#">
-                      <h3>Software</h3>
-                      <p>Best for Software & Application</p>
-                    </a>
-                  </li>
-                </ul>
+                <a href="#features">Sistema</a>
               </li>
-              <li class="menu-item"><a href="#">Pricing</a></li>
+              <li class="menu-item"><a href="#">Preços</a></li>
 
-              <li class="menu-item"><a href="#">Support</a></li>
+              <li class="menu-item"><a href="#">Ajuda</a></li>
             </ul>
           </div>
           <div class="mobile-menu"></div>
@@ -70,8 +26,8 @@
         <!-- Button Block -->
         <div class="col-4 col-md-4">
           <div class="header-btns">
-            <a href="#" class="btn btn--transparent">Sign in</a>
-            <a href="#" class="btn btn--primary hvr-shine">Start free trial</a>
+            <a href="#" class="btn btn-header">Registrar</a>
+            <a href="#" class="btn btn-header">Entrar</a>
           </div>
         </div>
       </div>
