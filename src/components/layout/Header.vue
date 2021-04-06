@@ -26,8 +26,8 @@
         <!-- Button Block -->
         <div class="col-4 col-md-4">
           <div class="header-btns">
-            <a href="#" class="btn btn-header">Registrar</a>
-            <a href="#" class="btn btn-header">Entrar</a>
+            <router-link to="/register" class="btn btn-header">Registrar</router-link>
+            <router-link to="/login" class="btn btn-header">Entrar</router-link>
           </div>
         </div>
       </div>

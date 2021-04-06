@@ -80,7 +80,7 @@
                 Leite Seguro
               </p>
               <div class="hero-btn">
-                <a href="#" class="btn">Entrar</a>
+                <router-link to="/login" class="btn btn-header">Entrar</router-link>
               </div>
             </div>
           </div>
