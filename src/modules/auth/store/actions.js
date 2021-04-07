@@ -3,11 +3,17 @@ import * as storage from '../storage'
 import * as types from './mutation-types'
 
 export const ActionLoginIn = ({ dispatch }, payload) => {
-    return services.auth.login(payload).then(res => {
-        dispatch('ActionSetToken', res.data.accessToken)
-    })
+    // return services.auth.login(payload).then(res => {
+    //     dispatch('ActionSetToken', res.data.accessToken)
+    // })
+    console.log(payload);
+    return
 }
 
+export const ActionRegister = ({ dispatch }, payload) => {
+    console.log(payload);
+    return
+}
 // export const ActionCheckToken = ({ dispatch, state }) => {
 //     if(state.accessToken) {
 //         return Promise.resolve(state.accessToken)

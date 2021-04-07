@@ -25,8 +25,8 @@
         />
       </div>
 
-      <div class="row" style="justify-content: center;">
-        <button @click="login()" class="btn btn-entrar btn-lg">
+      <div class="row" style="justify-content: center">
+        <button @click.prevent="login" class="btn btn-entrar btn-lg">
           Entrar
         </button>
       </div>
@@ -54,20 +54,41 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
+
 export default {
   name: "Login",
   data() {
     return {
-      loginForm: {
-        email: "",
-        senha: "",
+      email: "",
+      senha: "",
+      form: {
+        emailLogin: "",
+        senhaLogin: "",
       },
     };
   },
 
   methods: {
+    ...mapActions("auth", ["ActionLoginIn"]),
     login() {
-      alert("Login");
+      if (this.email == "" || this.senha == "") {
+          console.log("Algo de errado não está certo* Campos Vazios")
+      } else {
+        this.form.emailLogin = this.email;
+        this.form.senhaLogin = this.senha;
+        try {
+          this.ActionLoginIn(this.form)
+            .then(() => {
+              console.log("Deu certo");
+            })
+            .catch((err) => {
+              console.log(err);
+            });
+        } catch (err) {
+          console.log(err);
+        }
+      }
     },
   },
 };
