@@ -10,8 +10,8 @@ export default [
         component: () => import(/* webpackChunkName: "register" */ './pages/Register')
     },
     {
-        name: 'RecoverPassword',
-        path: '/recover-password',
+        name: 'RecuperarSenha',
+        path: '/recuperar-senha',
         component: () => import(/* webpackChunkName: "recover-password" */ './pages/RecoverPassword')
     }
 ]

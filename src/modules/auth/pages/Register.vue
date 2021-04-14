@@ -41,14 +41,19 @@
       </div>
 
       <p class="forgot-password text-center">
-        <router-link to="/login">Já tem uma conta?</router-link>
+        <router-link to="recuperar-senha">Tem conta e esqueceu a senha?</router-link>
       </p>
 
       <div class="rodapeLogin">
         <div class="row">
-          <div class="col-12">
+          <div class="col-6">
             <router-link to="/">
               <button class="btn btn-registrar">Voltar</button>
+            </router-link>
+          </div>
+          <div class="col-6">
+            <router-link to="/login">
+              <button class="btn btn-registrar">Já tem conta?</button>
             </router-link>
           </div>
         </div>

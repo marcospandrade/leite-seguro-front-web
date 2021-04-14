@@ -32,7 +32,7 @@
       </div>
 
       <p class="forgot-password text-center">
-        <router-link to="/forgot-password">Esqueceu sua senha?</router-link>
+        <router-link to="recuperar-senha">Esqueceu sua senha?</router-link>
       </p>
 
       <div class="rodapeLogin">
@@ -77,17 +77,18 @@ export default {
       } else {
         this.form.emailLogin = this.email;
         this.form.senhaLogin = this.senha;
-        try {
-          this.ActionLoginIn(this.form)
-            .then(() => {
-              console.log("Deu certo");
-            })
-            .catch((err) => {
-              console.log(err);
-            });
-        } catch (err) {
-          console.log(err);
-        }
+        this.$router.push({ name: 'Dashboard' })
+        // try {
+        //   this.ActionLoginIn(this.form)
+        //     .then(() => {
+        //       console.log("Deu certo");
+        //     })
+        //     .catch((err) => {
+        //       console.log(err);
+        //     });
+        // } catch (err) {
+        //   console.log(err);
+        // }
       }
     },
   },
