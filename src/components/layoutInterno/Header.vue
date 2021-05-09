@@ -23,6 +23,7 @@
             <router-link to="/relatorios" class="nav-link"
               >Relatórios</router-link
             >
+            <router-link to="/usuarios" class="nav-link">Usuários</router-link>
           </div>
         </div>
       </div>

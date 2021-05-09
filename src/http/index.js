@@ -8,7 +8,7 @@ Vue.use(VueResource);
 const http = Vue.http
 
 //Definir api para consumo de dados
-http.options.root = 'http://localhost:3300/api/'
+http.options.root = 'https://leiteseguro.hasura.app/api/rest/'
 
 http.interceptors.push(interceptors)
 

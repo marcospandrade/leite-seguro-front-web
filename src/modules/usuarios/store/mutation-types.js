@@ -1,0 +1,1 @@
+export const SET_USUARIOS = 'USUARIOS/SET_USUARIOS';

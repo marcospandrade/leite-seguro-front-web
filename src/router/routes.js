@@ -13,11 +13,15 @@ import {
 import {
     routes as relatorios
 } from '@/modules/relatorios'
+import {
+    routes as usuarios
+} from '@/modules/usuarios'
 
 export default [
     ...landing,
     ...auth,
     ...dashboard,
     ...perfil,
-    ...relatorios
+    ...relatorios,
+    ...usuarios
 ]
