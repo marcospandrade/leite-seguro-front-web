@@ -7,9 +7,17 @@ import {
 import {
     routes as dashboard
 } from '@/modules/dashboard'
+import {
+    routes as perfil
+} from '@/modules/perfil'
+import {
+    routes as relatorios
+} from '@/modules/relatorios'
 
 export default [
     ...landing,
     ...auth,
-    ...dashboard
+    ...dashboard,
+    ...perfil,
+    ...relatorios
 ]

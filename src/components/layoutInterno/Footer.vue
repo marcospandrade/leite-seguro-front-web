@@ -1,7 +1,7 @@
 <template>
   <footer class="footer">
     <div class="container text-center mt-3">
-      <span class="text-muted ">Leite Seguro 2021</span>
+      <h5 class="footer-leite-seguro">Leite Seguro 2021</h5>
     </div>
   </footer>
 </template>
@@ -19,6 +19,12 @@ export default {
   bottom: 0px;
   height: 10vh;
   width: 100%;
-  background: #50e3c2;
+  background-image: linear-gradient(-45deg, #152649 0%, #4f525c 100%);
 }
+
+.footer-leite-seguro {
+  font-weight: bolder;
+  color:white;
+}
+
 </style>
