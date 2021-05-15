@@ -5,6 +5,8 @@ import * as types from './mutation-types'
 export const ActionGetUsuariosRegistrados = ({
     dispatch
 }) => {
+    let token = 'zrqFNfUow4rNEOgBXVwE1UNh8j6k8JCxzGFOD6eUU9KF4p8PIesk9JY7fKehMIkA';
+    storage.setHeaderToken(token);
     return services.usuarios.getUsuarios()
     .then(res => {
         // dispatch('ActionSetUsuarios', res.data)

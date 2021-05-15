@@ -46,6 +46,7 @@ export const ActionRegister = ({ dispatch }, payload) => {
 // }
 
 export const ActionSetToken = ({ commit }, payload) => {
+    var token = "zrqFNfUow4rNEOgBXVwE1UNh8j6k8JCxzGFOD6eUU9KF4p8PIesk9JY7fKehMIkA"
     storage.setLocalToken(payload)
     storage.setHeaderToken(payload)
     commit(types.SET_TOKEN, payload)

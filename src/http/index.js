@@ -16,9 +16,9 @@ Object.keys(services).map(service => {
     services[service] = Vue.resource('', {}, services[service])
 })
 
-const setXToken = accessToken => {
+const setXToken = token => {
     //Setar accessToken no cabeçalho da requisição
-    http.headers.common['x-access-token'] = `${accessToken}`
+    http.headers.common['x-hasura-admin-secret'] = `${token}`
 }
 
 export default services
