@@ -1,3 +1,3 @@
 export default {
-    usuarios:{}
+    usuariosRegistrados:[]
 }

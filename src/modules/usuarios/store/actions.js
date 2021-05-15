@@ -9,19 +9,13 @@ export const ActionGetUsuariosRegistrados = ({
     storage.setHeaderToken(token);
     return services.usuarios.getUsuarios()
     .then(res => {
-        // dispatch('ActionSetUsuarios', res.data)
+        dispatch('ActionSetUsuarios', res.data)
         console.log(res)
     }).catch(err => {
         console.log(err);
     })
 }
 
-export const ActionRegister = ({
-    dispatch
-}, payload) => {
-    console.log(payload);
-    return
-}
 // export const ActionCheckToken = ({ dispatch, state }) => {
 //     if(state.accessToken) {
 //         return Promise.resolve(state.accessToken)
