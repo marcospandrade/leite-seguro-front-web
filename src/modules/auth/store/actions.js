@@ -11,8 +11,11 @@ export const ActionLoginIn = ({ dispatch }, payload) => {
 }
 
 export const ActionRegister = ({ dispatch }, payload) => {
-    console.log(payload);
-    return
+    let token = 'zrqFNfUow4rNEOgBXVwE1UNh8j6k8JCxzGFOD6eUU9KF4p8PIesk9JY7fKehMIkA';
+    storage.setHeaderToken(token)
+
+    
+    return services.auth.cadastrarUsuario(payload);
 }
 // export const ActionCheckToken = ({ dispatch, state }) => {
 //     if(state.accessToken) {

@@ -2,6 +2,8 @@ import Vue from 'vue'
 import App from './App.vue'
 import store from './store'
 import router from './router'
+import Vuelidate from 'vuelidate'
+import VueMask from 'v-mask'
 
 import './icons'
 import '@/assets/styles/index.scss' //global css
@@ -16,6 +18,8 @@ import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 Vue.use(BootstrapVue)
 // Optionally install the BootstrapVue icon components plugin
 Vue.use(IconsPlugin)
+Vue.use(Vuelidate)
+Vue.use(VueMask);
 
 Vue.config.productionTip = false
 

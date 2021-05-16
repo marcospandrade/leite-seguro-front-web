@@ -9,6 +9,17 @@
   box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.75);
 }
 
+#registerTemplate form {
+  margin: auto; 
+  background-color: #ECE5F0;
+  border-radius: 30px;
+  padding: 6vh;
+  width: 90vh;
+  -webkit-box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.75);
+}
+
 .vue-tempalte {
   min-height: 100vh;
   display: flex;
@@ -78,7 +89,7 @@ label {
   justify-content: center;
 }
 
-#loginTemplate .btn-entrar {
+#loginTemplate .btn-entrar, #registerTemplate .btn-entrar {
   border-color: #50e3c2;
   background-color: #50e3c2;
   width: 52vh;
@@ -89,14 +100,14 @@ label {
   transition: .3s ease-in-out !important;
 }
 
-#loginTemplate .btn-entrar:hover {
+#loginTemplate .btn-entrar:hover, #registerTemplate .btn-entrar:hover {
   border-color: #0B6E4F;
   background-color: #0B6E4F;
   color: white;
-  width: 110%; 
+  width: 110%;
 }
 
-#loginTemplate .btn-registrar {
+#loginTemplate .btn-registrar, #registerTemplate .btn-registrar {
   border-color: #0B6E4F;
   background-color: #0B6E4F;
   color: white;
@@ -109,9 +120,9 @@ label {
   transition: .3s ease-in-out !important;
 }
 
-#loginTemplate .btn-registrar:hover {
+#loginTemplate .btn-registrar:hover, #registerTemplate .btn-registrar:hover {
   width: 24vh;
   background-color: #50e3c2;
   border-color: #50e3c2;
-  color:rgba(0, 0, 0, 0.75);
+  color: rgba(0, 0, 0, 0.75);
 }

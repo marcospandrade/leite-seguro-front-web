@@ -1,47 +1,158 @@
 <template>
   <div
-    id="loginTemplate"
+    id="registerTemplate"
     class="vue-tempalte"
     style="background-image: url('images/vacas-pasto.jpg')"
   >
-    <form class="vertical-center">
+    <form class="vertical-center needs-validation">
       <h3>Leite Seguro</h3>
 
-      <div class="form-group">
-        <label>E-mail</label>
-        <input
-          type="email"
-          class="form-control form-control-lg"
-          v-model="formRegistro.email"
-        />
+      <div class="row">
+        <div class="col-md-6 col-sm-12">
+          <div
+            class="form-group"
+            :class="{ 'form-group-error': $v.formRegistro.nome.$error }"
+          >
+            <label for="nome" class="form-label">Nome</label>
+            <input
+              id="nome"
+              type="text"
+              class="form-control"
+              v-model.trim="$v.formRegistro.nome.$model"
+            />
+            <div v-if="$v.formRegistro.nome.$error">
+              <div class="error" v-if="!$v.formRegistro.nome.required">
+                Nome é obrigatório.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+          <div
+            class="form-group"
+            :class="{ 'form-group--error': $v.formRegistro.telefone.$error }"
+          >
+            <label for="telefone" class="form-label">Telefone</label>
+            <input
+              id="telefone"
+              type="text"
+              class="form-control"
+              v-model.trim="$v.formRegistro.telefone.$model"
+              v-mask="'(##) #####-####'"
+            />
+            <div v-if="$v.formRegistro.telefone.$error">
+              <div class="error" v-if="!$v.formRegistro.telefone.required">
+                Telefone é obrigatorio.
+              </div>
+              <div class="error" v-if="!$v.formRegistro.telefone.minlength">
+                Deve conter 11 dígitos.
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div class="form-group">
-        <label>Senha</label>
-        <input
-          type="password"
-          class="form-control form-control-lg"
-          v-model="formRegistro.senhaRegistro"
-        />
+      <div class="row">
+        <div class="col-md-6 col-sm-12">
+          <div
+            class="form-group"
+            :class="{ 'form-group-error': $v.formRegistro.cpf_cnpj.$error }"
+          >
+            <label for="documento" class="form-label">CPF / CNPJ</label>
+            <input
+              id="cpf_cnpj"
+              type="text"
+              class="form-control"
+              v-mask=" formRegistro.cpf_cnpj.length > 14 ? '##.###.###/####-##' : '###.###.###-##'"
+              v-model.trim="$v.formRegistro.cpf_cnpj.$model"
+            />
+            <div v-if="$v.formRegistro.cpf_cnpj.$error">
+              <div class="error" v-if="!$v.formRegistro.cpf_cnpj.required">
+                Insira o número do documento.
+              </div>
+              <div class="error" v-if="!$v.formRegistro.cpf_cnpj.minLength">
+                No mínimo 11 dígitos. 
+              </div>
+              <div class="error" v-if="!$v.formRegistro.cpf_cnpj.maxLength">
+                No máximo 14 dígitos.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+          <div class="form-group" :class="{ 'form-group--error': $v.formRegistro.email.$error }">
+            <label for="email" class="form-label">Email</label>
+            <input
+              id="email"
+              type="email"
+              class="form-control"
+              v-model.trim="$v.formRegistro.email.$model"
+            />
+            <div v-if="$v.formRegistro.email.$error">
+              <div class="error" v-if="!$v.formRegistro.email.required">
+                Email é obrigatorio.
+              </div>
+              <div class="error" v-if="!$v.formRegistro.email.email">
+                Email inválido
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+      <div class="row">
+        <div class="col-md-6 col-sm-12">
+          <div class="form-group" :class="{ 'form-group--error': $v.formRegistro.senha.$error }">
+            <label for="senha" class="form-label">Senha</label>
+            <input
+              id="senha"
+              type="password"
+              class="form-control"
+              v-model.trim="$v.formRegistro.senha.$model"
+            />
+            <div v-if="$v.formRegistro.senha.$error">
+              <div class="error" v-if="!$v.formRegistro.senha.required">
+                Senha é obrigatorio.
+              </div>
+              <div class="error" v-if="!$v.formRegistro.senha.minLength">
+                Senha menor que 6 caracteres.
+              </div>
+            </div>
+          </div>
+        </div>
 
-      <div class="form-group">
-        <label>Confirmar Senha</label>
-        <input
-          type="password"
-          class="form-control form-control-lg"
-          v-model="formRegistro.confirmarSenhaRegistro"
-        />
+        <div class="col-md-6 col-sm-12">
+          <div class="form-group" :class="{ 'form-group--error': $v.confirmarSenha.$error }">
+            <label for="confirmar-senha" class="form-label"
+              >Confirmar Senha</label
+            >
+            <input
+              id="confirmar-senha"
+              type="password"
+              class="form-control"
+              v-model.trim="$v.confirmarSenha.$model"
+            />
+            <div v-if="$v.confirmarSenha.$error">
+              <div class="error" v-if="!$v.confirmarSenha.required">
+                Confirmar Senha é obrigatorio.
+              </div>
+              <div class="error" v-if="!$v.confirmarSenha.sameAsSenha">
+                Senhas não são compativeis.
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="row" style="justify-content: center">
-        <div @click.prevent="register" class="btn btn-entrar btn-lg">
+        <div @click.prevent="register" class="btn btn-entrar btn-md">
           Cadastrar
         </div>
       </div>
 
       <p class="forgot-password text-center">
-        <router-link to="recuperar-senha">Tem conta e esqueceu a senha?</router-link>
+        <router-link to="recuperar-senha"
+          >Tem conta e esqueceu a senha?</router-link
+        >
       </p>
 
       <div class="rodapeLogin">
@@ -63,40 +174,82 @@
 </template>
 
 <script>
+import {
+  required,
+  email,
+  minLength,
+  sameAs,
+  maxLength
+} from "vuelidate/lib/validators";
 import { mapActions } from "vuex";
+import User from "@/models/user";
 
 export default {
   name: "Register",
   data() {
     return {
       formRegistro: {
-        emailRegistro: "",
-        senhaRegistro: "",
-        confirmarSenhaRegistro: "",
+        nome: "",
+        telefone: "",
+        cpf_cnpj: "",
+        email: "",
+        senha: "",
       },
+      //  User usuarioParaRegistro:
+      confirmarSenha: "",
     };
+  },
+  validations: {
+    formRegistro: {
+      nome: {
+        required,
+      },
+      telefone: {
+        required,
+        minLength: minLength(15),
+      },
+      cpf_cnpj: {
+        required,
+        minLength: minLength(14),
+        maxLength: maxLength(18)
+      },
+      email: {
+        required,
+        email,
+      },
+      senha: {
+        required,
+        minLength: minLength(6),
+      },
+    },
+    confirmarSenha: {
+        required,
+        sameAsSenha: sameAs(function() { return this.formRegistro.senha}),
+      },
   },
   methods: {
     ...mapActions("auth", ["ActionRegister"]),
     async register() {
-      if (
-        this.formRegistro.emailRegistro == "" ||
-        this.formRegistro.senhaRegistro == "" ||
-        this.formRegistro.confirmarSenhaRegistro == ""
-      ) {
-        if (
-          this.formRegistro.senhaRegistro ===
-          this.formRegistro.confirmarSenhaRegistro
-        ) {
-          try {
-            await this.ActionRegister(this.formRegistro).then(() => {
-                console.log("Deu certo o registro")
-            })
-          } catch (err) {
-            console.log("try catch");
-            console.log(err);
-          }
+
+      this.$v.$touch();
+      if (!this.$v.invalid) {
+        try {
+          var cpf_cnpj_formatado = this.formRegistro.cpf_cnpj
+            .replaceAll(".", "")
+            .replaceAll("/", "")
+            .replaceAll("-", "");
+          this.formRegistro.cpf_cnpj = cpf_cnpj_formatado;
+          console.log(this.formRegistro);
+          await this.ActionRegister(this.formRegistro).then(() => {
+            console.log("Deu certo o registro");
+            console.log(this.formRegistro);
+          });
+        } catch (err) {
+          console.log("try catch");
+          console.log(err);
         }
+      } else {
+        alert("Deu errado");
       }
     },
   },
