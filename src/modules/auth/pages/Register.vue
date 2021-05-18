@@ -63,7 +63,11 @@
               id="cpf_cnpj"
               type="text"
               class="form-control"
-              v-mask=" formRegistro.cpf_cnpj.length > 14 ? '##.###.###/####-##' : '###.###.###-##'"
+              v-mask="
+                formRegistro.cpf_cnpj.length > 14
+                  ? '##.###.###/####-##'
+                  : '###.###.###-##'
+              "
               v-model.trim="$v.formRegistro.cpf_cnpj.$model"
             />
             <div v-if="$v.formRegistro.cpf_cnpj.$error">
@@ -71,7 +75,7 @@
                 Insira o número do documento.
               </div>
               <div class="error" v-if="!$v.formRegistro.cpf_cnpj.minLength">
-                No mínimo 11 dígitos. 
+                No mínimo 11 dígitos.
               </div>
               <div class="error" v-if="!$v.formRegistro.cpf_cnpj.maxLength">
                 No máximo 14 dígitos.
@@ -80,7 +84,10 @@
           </div>
         </div>
         <div class="col-md-6 col-sm-12">
-          <div class="form-group" :class="{ 'form-group--error': $v.formRegistro.email.$error }">
+          <div
+            class="form-group"
+            :class="{ 'form-group--error': $v.formRegistro.email.$error }"
+          >
             <label for="email" class="form-label">Email</label>
             <input
               id="email"
@@ -101,7 +108,10 @@
       </div>
       <div class="row">
         <div class="col-md-6 col-sm-12">
-          <div class="form-group" :class="{ 'form-group--error': $v.formRegistro.senha.$error }">
+          <div
+            class="form-group"
+            :class="{ 'form-group--error': $v.formRegistro.senha.$error }"
+          >
             <label for="senha" class="form-label">Senha</label>
             <input
               id="senha"
@@ -121,7 +131,10 @@
         </div>
 
         <div class="col-md-6 col-sm-12">
-          <div class="form-group" :class="{ 'form-group--error': $v.confirmarSenha.$error }">
+          <div
+            class="form-group"
+            :class="{ 'form-group--error': $v.confirmarSenha.$error }"
+          >
             <label for="confirmar-senha" class="form-label"
               >Confirmar Senha</label
             >
@@ -170,6 +183,11 @@
         </div>
       </div>
     </form>
+    <modal name="success-modal">
+      <div>Deu tudo certo, meu chegado.</div>
+    </modal>
+
+    <modal name="error-modal"> Algo de errado não deu certo. </modal>
   </div>
 </template>
 
@@ -179,10 +197,9 @@ import {
   email,
   minLength,
   sameAs,
-  maxLength
+  maxLength,
 } from "vuelidate/lib/validators";
 import { mapActions } from "vuex";
-import User from "@/models/user";
 
 export default {
   name: "Register",
@@ -211,7 +228,7 @@ export default {
       cpf_cnpj: {
         required,
         minLength: minLength(14),
-        maxLength: maxLength(18)
+        maxLength: maxLength(18),
       },
       email: {
         required,
@@ -223,14 +240,16 @@ export default {
       },
     },
     confirmarSenha: {
-        required,
-        sameAsSenha: sameAs(function() { return this.formRegistro.senha}),
-      },
+      required,
+      sameAsSenha: sameAs(function () {
+        return this.formRegistro.senha;
+      }),
+    },
   },
+  mounted() {},
   methods: {
     ...mapActions("auth", ["ActionRegister"]),
     async register() {
-
       this.$v.$touch();
       if (!this.$v.invalid) {
         try {
@@ -239,18 +258,27 @@ export default {
             .replaceAll("/", "")
             .replaceAll("-", "");
           this.formRegistro.cpf_cnpj = cpf_cnpj_formatado;
-          console.log(this.formRegistro);
           await this.ActionRegister(this.formRegistro).then(() => {
-            console.log("Deu certo o registro");
-            console.log(this.formRegistro);
+            this.$modal.show("success-modal");
+            this.limparCampos();
           });
         } catch (err) {
-          console.log("try catch");
+          this.$modal.show("error-modal");
           console.log(err);
         }
+        this.$router.push({ name: "Login"})
       } else {
-        alert("Deu errado");
+        this.$modal.show("error-modal");
       }
+    },
+
+    limparCampos() {
+      (this.formRegistro.nome = ""),
+        (this.formRegistro.telefone = ""),
+        (this.formRegistro.cpf_cnpj = ""),
+        (this.formRegistro.email = ""),
+        (this.formRegistro.senha = "");
+      this.confirmarSenha = "0";
     },
   },
 };
@@ -267,5 +295,9 @@ export default {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.error {
+  color: red;
 }
 </style>
