@@ -71,24 +71,23 @@ export default {
 
   methods: {
     ...mapActions("auth", ["ActionLoginIn"]),
-    login() {
+    async login() {
       if (this.email == "" || this.senha == "") {
           console.log("Algo de errado não está certo* Campos Vazios")
       } else {
         this.form.emailLogin = this.email;
         this.form.senhaLogin = this.senha;
-        this.$router.push({ name: 'Dashboard' })
-        // try {
-        //   this.ActionLoginIn(this.form)
-        //     .then(() => {
-        //       console.log("Deu certo");
-        //     })
-        //     .catch((err) => {
-        //       console.log(err);
-        //     });
-        // } catch (err) {
-        //   console.log(err);
-        // }
+
+        try {
+          await this.ActionLoginIn(this.form).then(() => {
+            this.$router.push({ name: 'Dashboard' })
+          })
+          .catch((err) => {
+              console.log(err);
+            });
+        } catch(err) {
+          console.log(err);
+        }
       }
     },
   },

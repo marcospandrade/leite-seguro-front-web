@@ -183,11 +183,13 @@
         </div>
       </div>
     </form>
-    <modal name="success-modal">
+    <modal name="success-modal" width="40" heigth="auto">
       <div>Deu tudo certo, meu chegado.</div>
     </modal>
 
-    <modal name="error-modal"> Algo de errado não deu certo. </modal>
+    <modal name="error-modal" width="40" heigth="auto">
+      Algo de errado não deu certo.
+    </modal>
   </div>
 </template>
 
@@ -266,7 +268,7 @@ export default {
           this.$modal.show("error-modal");
           console.log(err);
         }
-        this.$router.push({ name: "Login"})
+        this.$router.push({ name: "Login" });
       } else {
         this.$modal.show("error-modal");
       }

@@ -1,7 +1,7 @@
 export default {
     login: {
         method: 'post',
-        url: 'auth/login'
+        url: 'get_usuario'
     },
     cadastrarUsuario: {
         method: 'post',
