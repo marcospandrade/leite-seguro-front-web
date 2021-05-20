@@ -37,14 +37,16 @@
               id="telefone"
               type="text"
               class="form-control"
-              v-model.trim="$v.formRegistro.telefone.$model"
               v-mask="'(##) #####-####'"
+              v-model.trim="$v.formRegistro.telefone.$model"
+              @blur="validateHelper.telLength = true"
+                
             />
             <div v-if="$v.formRegistro.telefone.$error">
               <div class="error" v-if="!$v.formRegistro.telefone.required">
                 Telefone é obrigatorio.
               </div>
-              <div class="error" v-if="!$v.formRegistro.telefone.minlength">
+              <div class="error" id="telLength" v-if="(validateHelper.telLength) && (!$v.formRegistro.telefone.minLength)">
                 Deve conter 11 dígitos.
               </div>
             </div>
@@ -69,12 +71,13 @@
                   : '###.###.###-##'
               "
               v-model.trim="$v.formRegistro.cpf_cnpj.$model"
+              @blur="validateHelper.cpf_cnpjLength = true"
             />
             <div v-if="$v.formRegistro.cpf_cnpj.$error">
               <div class="error" v-if="!$v.formRegistro.cpf_cnpj.required">
                 Insira o número do documento.
               </div>
-              <div class="error" v-if="!$v.formRegistro.cpf_cnpj.minLength">
+              <div class="error" v-if="(!$v.formRegistro.cpf_cnpj.minLength) && (validateHelper.cpf_cnpjLength)">
                 No mínimo 11 dígitos.
               </div>
               <div class="error" v-if="!$v.formRegistro.cpf_cnpj.maxLength">
@@ -94,12 +97,13 @@
               type="email"
               class="form-control"
               v-model.trim="$v.formRegistro.email.$model"
+              @blur="validateHelper.emailValido = true"
             />
             <div v-if="$v.formRegistro.email.$error">
               <div class="error" v-if="!$v.formRegistro.email.required">
                 Email é obrigatorio.
               </div>
-              <div class="error" v-if="!$v.formRegistro.email.email">
+              <div class="error" v-if="(!$v.formRegistro.email.email) && (validateHelper.emailValido)">
                 Email inválido
               </div>
             </div>
@@ -118,13 +122,14 @@
               type="password"
               class="form-control"
               v-model.trim="$v.formRegistro.senha.$model"
+              @blur="validateHelper.senhaLength = true"
             />
             <div v-if="$v.formRegistro.senha.$error">
               <div class="error" v-if="!$v.formRegistro.senha.required">
-                Senha é obrigatorio.
+                Campo obrigatório.
               </div>
-              <div class="error" v-if="!$v.formRegistro.senha.minLength">
-                Senha menor que 6 caracteres.
+              <div class="error" v-if="(!$v.formRegistro.senha.minLength) && (validateHelper.senhaLength)">
+                A senha deve conter no mínimo 6 caracteres.
               </div>
             </div>
           </div>
@@ -143,13 +148,14 @@
               type="password"
               class="form-control"
               v-model.trim="$v.confirmarSenha.$model"
+              @blur="validateHelper.senhasIguais = true"
             />
             <div v-if="$v.confirmarSenha.$error">
               <div class="error" v-if="!$v.confirmarSenha.required">
                 Confirmar Senha é obrigatorio.
               </div>
-              <div class="error" v-if="!$v.confirmarSenha.sameAsSenha">
-                Senhas não são compativeis.
+              <div class="error" v-if="(!$v.confirmarSenha.sameAsSenha) && (validateHelper.senhasIguais)">
+                As senhas devem ser iguais.
               </div>
             </div>
           </div>
@@ -183,11 +189,11 @@
         </div>
       </div>
     </form>
-    <modal name="success-modal" width="40" heigth="auto">
+    <modal name="success-modal" :adaptive="true">
       <div>Deu tudo certo, meu chegado.</div>
     </modal>
 
-    <modal name="error-modal" width="40" heigth="auto">
+    <modal name="error-modal" :adaptive="true">
       Algo de errado não deu certo.
     </modal>
   </div>
@@ -216,6 +222,15 @@ export default {
       },
       //  User usuarioParaRegistro:
       confirmarSenha: "",
+
+      validateHelper: {
+        telLength: false,
+        cpf_cnpjLength: false,
+        emailValido: false,
+        senhaLength: false,
+        senhasIguais: false
+      }
+      
     };
   },
   validations: {
@@ -238,7 +253,7 @@ export default {
       },
       senha: {
         required,
-        minLength: minLength(6),
+        minLength: minLength(8),
       },
     },
     confirmarSenha: {
@@ -252,17 +267,15 @@ export default {
   methods: {
     ...mapActions("auth", ["ActionRegister"]),
     async register() {
-      this.$v.$touch();
-      if (!this.$v.invalid) {
+      this.formRegistro.cpf_cnpj = this.formRegistro.cpf_cnpj.replaceAll(/[./-]/g, '')
+      if (!this.$v.$invalid) {
         try {
-          var cpf_cnpj_formatado = this.formRegistro.cpf_cnpj
-            .replaceAll(".", "")
-            .replaceAll("/", "")
-            .replaceAll("-", "");
-          this.formRegistro.cpf_cnpj = cpf_cnpj_formatado;
+          // Tratamento do campo de CPF/CNPJ usando classe de caracteres
+          
+
           await this.ActionRegister(this.formRegistro).then(() => {
+            console.log("Passou a validação")
             this.$modal.show("success-modal");
-            this.limparCampos();
           });
         } catch (err) {
           this.$modal.show("error-modal");
@@ -272,15 +285,6 @@ export default {
       } else {
         this.$modal.show("error-modal");
       }
-    },
-
-    limparCampos() {
-      (this.formRegistro.nome = ""),
-        (this.formRegistro.telefone = ""),
-        (this.formRegistro.cpf_cnpj = ""),
-        (this.formRegistro.email = ""),
-        (this.formRegistro.senha = "");
-      this.confirmarSenha = "0";
     },
   },
 };
