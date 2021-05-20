@@ -109,7 +109,7 @@ export default {
     ...mapActions("auth", ["ActionLoginIn"]),
     async login() {
       this.$v.$touch();
-      if (this.$v.invalid) {
+      if (this.$v.$invalid) {
           console.log("Algo de errado não está certo*")
       } else {
         this.form.email = this.$v.form.$model.email;
