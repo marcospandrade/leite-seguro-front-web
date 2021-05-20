@@ -4,6 +4,9 @@
     <div class="container">
       <div class="text-center mt-4 mb-2">
         <h3>Usuários registrados</h3>
+        <div class="row" style="justify-content: flex-end;">
+          <button class="btn btn-success" @click="carregarUsuarios">Atualizar usuários</button>
+        </div>
       </div>
       <table class="table table-striped table-hover">
         <thead>
@@ -131,7 +134,7 @@ export default {
       if (value == "F") {
         return "Usuario";
       }
-      if (value == "V") {
+      if (value == "T") {
         return "Admin";
       }
     },
