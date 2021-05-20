@@ -7,22 +7,41 @@
     <form class="vertical-center">
       <h3>Leite Seguro</h3>
 
-      <div class="form-group">
-        <label>E-mail</label>
+      <div class="form-group" :class="{ 'form-group--error': $v.form.email.$error }">
+        <label for="email" class="form-label">E-mail</label>
         <input
-          type="email"
-          class="form-control form-control-lg"
-          v-model="email"
-        />
+              id="email"
+              type="email"
+              class="form-control form-control-lg"
+              v-model.trim="$v.form.email.$model"
+            />
+            <div v-if="$v.form.email.$error">
+              <div class="error" v-if="!$v.form.email.required">
+                Email é obrigatorio.
+              </div>
+              <div class="error" v-if="!$v.form.email.email">
+                Email inválido
+              </div>
+            </div>
       </div>
 
-      <div class="form-group">
+      <div class="form-group" :class="{ 'form-group--error': $v.form.senha.$error }">
         <label>Senha</label>
+        
         <input
-          type="password"
-          class="form-control form-control-lg"
-          v-model="senha"
-        />
+              id="senha"
+              type="password"
+              class="form-control form-control-lg"
+              v-model.trim="$v.form.senha.$model"
+            />
+            <div v-if="$v.form.senha.$error">
+              <div class="error" v-if="!$v.form.senha.required">
+                Senha é obrigatorio.
+              </div>
+              <div class="error" v-if="!$v.form.senha.minLength">
+                Senha menor que 6 caracteres.
+              </div>
+            </div>
       </div>
 
       <div class="row" style="justify-content: center">
@@ -55,31 +74,50 @@
 
 <script>
 import { mapActions } from "vuex";
+import {
+  required,
+  email,
+  minLength,
+} from "vuelidate/lib/validators";
 
 export default {
   name: "Login",
+
   data() {
     return {
-      email: "",
-      senha: "",
       form: {
-        emailLogin: "",
-        senhaLogin: "",
+        email: "",
+        senha: "",
       },
     };
+  },
+
+  validations: {
+    form: {
+      email: {
+        required,
+        email,
+      },
+      senha: {
+        required,
+        minLength: minLength(6),
+      },
+    }
   },
 
   methods: {
     ...mapActions("auth", ["ActionLoginIn"]),
     async login() {
-      if (this.email == "" || this.senha == "") {
-          console.log("Algo de errado não está certo* Campos Vazios")
+      this.$v.$touch();
+      if (this.$v.invalid) {
+          console.log("Algo de errado não está certo*")
       } else {
-        this.form.emailLogin = this.email;
-        this.form.senhaLogin = this.senha;
+        this.form.email = this.$v.form.$model.email;
+        this.form.senha = this.$v.form.$model.senha;
 
         try {
-          await this.ActionLoginIn(this.form).then(() => {
+          await this.ActionLoginIn(this.form).then((res) => {
+            // console.log(res)
             this.$router.push({ name: 'Dashboard' })
           })
           .catch((err) => {

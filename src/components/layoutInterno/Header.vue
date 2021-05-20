@@ -24,13 +24,48 @@
               >Relatórios</router-link
             >
             <router-link to="/usuarios" class="nav-link">Usuários</router-link>
+            <router-link to="/questionarios" class="nav-link">
+              Questionários
+            </router-link>
+          </div>
+        </div>
+        <div class="logout navbar-nav">
+          <button
+            class="nav-link logout-link"
+            @click.prevent="abrirModal('logout-modal')"
+          >
+            Logout
+          </button>
+        </div>
+      </div>
+    </div>
+    <modal name="logout-modal">
+      <div class="card" style="height: 100%">
+        <div class="card-header text-center">
+          <h2>Opa</h2>
+        </div>
+        <div class="card-body text-center" style="padding: 1rem">
+          <h4>Tem certeza que deseja sair do sistema?</h4>
+        </div>
+        <div class="card-footer">
+          <div class="row">
+            <div class="col">
+              <button
+                class="btn btn-lg"
+                @click.prevent="fecharModal('logout-modal')"
+              >
+                Voltar
+              </button>
+            </div>
+            <div class="col" style="text-align: end">
+              <button class="btn btn-info btn-lg" @click.prevent="logout()">
+                Sair
+              </button>
+            </div>
           </div>
         </div>
       </div>
-      <div class="logout navbar-nav">
-        <button class="nav-link logout-link" @click.prevent="logout">Logout</button>
-      </div>
-    </div>
+    </modal>
   </nav>
 </template>
 
@@ -39,10 +74,16 @@ export default {
   name: "HeaderInterno",
 
   methods: {
-    logout(){
-      this.$router.push({name: 'landing'})
-    }
-  }
+    fecharModal(modal) {
+      this.$modal.hide(modal);
+    },
+    abrirModal(modal) {
+      this.$modal.show("logout-modal");
+    },
+    logout() {
+      this.$router.push({ name: "landing" });
+    },
+  },
 };
 </script>
 
@@ -61,9 +102,9 @@ export default {
 }
 
 .logout {
-  justify-content: right;
-  text-align: right;
-  margin: auto;
+  justify-content: end;
+  text-align: end;
+  margin-left: auto;
 }
 .logout-link {
   font-weight: bolder;

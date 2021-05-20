@@ -16,6 +16,17 @@ export const ActionGetUsuariosRegistrados = ({
     })
 }
 
+export const ActionDeletarUsuario = ({}, payload) => {
+    let token = 'zrqFNfUow4rNEOgBXVwE1UNh8j6k8JCxzGFOD6eUU9KF4p8PIesk9JY7fKehMIkA';
+    storage.setHeaderToken(token);
+    services.usuarios.deletarUsuario(payload).then(() => {
+        return 200;    
+    })
+    .catch((err)=> {
+        return 402;
+    })
+}
+
 // export const ActionCheckToken = ({ dispatch, state }) => {
 //     if(state.accessToken) {
 //         return Promise.resolve(state.accessToken)

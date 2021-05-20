@@ -3,16 +3,18 @@ import * as storage from '../../auth/storage'
 import * as types from './mutation-types'
 
 export const ActionLoginIn = ({ dispatch }, payload) => {
+    SetToken();
+    console.log("payload")
+    console.log(payload)
     services.auth.login(payload).then(res => {
-        SetToken();
+        console.log("Res actions")
+        console.log(res)
         dispatch('ActionSetUsuario', res.data);
-        console.log(res);
         return;
     })
     .catch((err) => {
         return err;
     })
-    console.log(payload);
     return
 }
 
@@ -65,6 +67,8 @@ export const ActionSignOut = ({ dispatch }) => {
 }
 
 export const SetToken = () => {
+    // console.log("to setando token")
+
     var token = "zrqFNfUow4rNEOgBXVwE1UNh8j6k8JCxzGFOD6eUU9KF4p8PIesk9JY7fKehMIkA"
     storage.setHeaderToken(token);
     storage.setLocalToken(token);

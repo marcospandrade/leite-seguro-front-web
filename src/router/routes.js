@@ -16,6 +16,9 @@ import {
 import {
     routes as usuarios
 } from '@/modules/usuarios'
+import {
+    routes as questionarios
+} from '@/modules/questionario'
 
 export default [
     ...landing,
@@ -23,5 +26,6 @@ export default [
     ...dashboard,
     ...perfil,
     ...relatorios,
-    ...usuarios
+    ...usuarios,
+    ...questionarios
 ]

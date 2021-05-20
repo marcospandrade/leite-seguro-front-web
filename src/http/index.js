@@ -21,5 +21,9 @@ const setXToken = token => {
     http.headers.common['x-hasura-admin-secret'] = `${token}`
 }
 
+const deletarUsuario = cpf_cnpj => {
+    return http.get(`https://leiteseguro.hasura.app/v1/graphql/set_usuario_del?cpf_cnpj=${cnpjEmpresa}`);
+}
+
 export default services
-export { http, setXToken }
+export { http, setXToken, deletarUsuario }

@@ -299,7 +299,4 @@ export default {
   background-size: cover;
 }
 
-.error {
-  color: red;
-}
 </style>
